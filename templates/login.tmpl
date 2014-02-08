@@ -15,43 +15,19 @@
       <a href='https://idp.itlab.stanford.edu/idp/profile/Metadata/SAML'>https://idp.itlab.stanford.edu/idp/profile/Metadata/SAML</a>
     </p>
     <p>
-      Here are sample <em>SessionInitiator</em> and
-      <em>MetadataProvider</em> sections for your
-      <em>shibboleth2.xml</em> configuration file:
-    </p>
-    <pre>
-  &lt;SessionInitiator type="Chaining" Location="/DIRECT/ITLab" isDefault="true"
-                    id="itlab" entityID="https://idp.itlab.stanford.edu/idp/shibboleth"&gt;
-    &lt;SessionInitiator type="SAML2" acsIndex="1"
-                      template="bindingTemplate.html"/&gt;
-    &lt;SessionInitiator type="Shib1" acsIndex="5"/&gt;
-  &lt;/SessionInitiator&gt;
-
-  &lt;MetadataProvider type="XML"
-                    uri="https://idp.itlab.stanford.edu/idp/profile/Metadata/SAML"
-                    backingFilePath="itlab-metata.xml" reloadInterval="7200"&gt;
-  &lt;/MetadataProvider&gt;
-    </pre>
-
-    <p>
-      This should work for Shibboleth 2.4 and later SPs instead of the
-      SessionInitiator entry above.
-    </p>
-    <pre>
-  &lt;SSO entityID="https://idp.itlab.stanford.edu/idp/shibboleth"&gt;
-    SAML2 SAML1
-  &lt;/SSO&gt;
-    </pre>
-
-    <p>
       Unlike our production IdP, this service does not require metadata
-      for your SP. <strong>Your SP metadata will be required to move to
-      production</strong>.
+      for your SP.
+    </p>
+    <p><strong>
+      Your SP metadata will be required to move to production
+    </strong></p>
+    <p>
+      <a href='#config'>Service Provider (SP) Configuration Help</a>
     </p>
 
-    <div class="loginbox">
-      <div class="leftpane">
-        <div class="content">
+    <section class="loginbox">
+      <section class="leftpane">
+        <section class="content">
 
           [% IF notdefined %]
 <!--
@@ -163,11 +139,11 @@ remuser_url            : where to send the user for REMOTE_USER auth
               </tr>
             </table>
           </form>
-        </div>
-      </div>
+        </section>
+      </section>
 
-      <div class="rightpane">
-        <div class="content">
+      <section class="rightpane">
+        <section class="content">
           <p>
             There are three test users available on this IdP:
           </p>
@@ -184,8 +160,46 @@ remuser_url            : where to send the user for REMOTE_USER auth
             to your SP similar to the ones that are released from the
             production IdPs.
           </p>
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </section>
+
+    <section>
+      <h1 name='config'>SP Configuration</h1>
+      
+      <p>
+        Here are sample <em>MetadataProvider</em> and <em>SSO</em> /
+        <em>SessionInitiator</em> sections for your
+        <em>shibboleth2.xml</em> configuration file:
+      </p>
+      <p>
+        Metadata configuration for all Shibboleth 2.x SPs:
+      </p>
+      <pre>
+    &lt;MetadataProvider type="XML"
+                      uri="https://idp.itlab.stanford.edu/idp/profile/Metadata/SAML"
+                      backingFilePath="itlab-metata.xml" reloadInterval="7200"&gt;
+    &lt;/MetadataProvider&gt;
+      </pre>
+      <p>
+        SSO configuration for Shibboleth 2.4 and newer SPs:
+      </p>
+      <pre>
+    &lt;SSO entityID="https://idp.itlab.stanford.edu/idp/shibboleth"&gt;
+      SAML2 SAML1
+    &lt;/SSO&gt;
+      </pre>
+      <p>
+        SessionInitiator for older SPs:
+      </p>
+      <pre>
+    &lt;SessionInitiator type="Chaining" Location="/DIRECT/ITLab" isDefault="true"
+                      id="itlab" entityID="https://idp.itlab.stanford.edu/idp/shibboleth"&gt;
+      &lt;SessionInitiator type="SAML2" acsIndex="1"
+                        template="bindingTemplate.html"/&gt;
+      &lt;SessionInitiator type="Shib1" acsIndex="5"/&gt;
+    &lt;/SessionInitiator&gt;
+      </pre>
+    </section>
   </body>
 </html>
