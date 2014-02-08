@@ -2,7 +2,8 @@
 <html>
   <head>
     <http-equiv="pragma" content="no-cache">
-    <title>WebAuth Login</title>
+    <link rel="stylesheet" type="text/css" href="/idp/login.css"/>
+    <title>IT Lab Login</title>
   </head>
 
   [% IF notdefined %]
@@ -30,7 +31,7 @@ remuser_url            : where to send the user for REMOTE_USER auth
   [% END %]
 
   <body onload="document.login.username.focus();">
-    <h1 align="center">WebAuth Login</h1>
+    <h1 align="center">IT Lab Login</h1>
     [% IF error %]
       <div class="error" align="center">
         <p><strong>
@@ -153,8 +154,8 @@ remuser_url            : where to send the user for REMOTE_USER auth
     <div class="trailer">
       <h2>Caution:</h2>
 
-      <p>Never enter your WebAuth username and password on a web page
-      unless the page is a page directly served by the WebAuth login
+      <p>Never enter your IT Lab username and password on a web page
+      unless the page is a page directly served by the IT Lab login
       server.</p>
     </div>
   </body>
