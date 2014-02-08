@@ -13,9 +13,6 @@ aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
@@ -93,7 +90,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, a {
-    color: #009BC2;
+    color: #820000;
     text-decoration: none;
 }
 
