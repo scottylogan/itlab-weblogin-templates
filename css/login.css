@@ -1,22 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans:regular,bold|Droid+Serif:regular,italic,bold,bolditalic&subset=latin);
 
-html,
-body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote,
-a, img, strong, var,
-b, u, i, center, dl, dt, dd, ol, ul, li,
-fieldset, form,
-label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article,
-aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
+
 
 /* HTML5 display-role reset for older browsers */
 article, aside,
@@ -27,72 +11,50 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   color: #777;
-  background-color: #ececec;
+  background-color: #820000;
   font-family: 'Droid Sans', 'Helvetica', 'Verdana', sans-serif;
 }
 
-.loginbox {
-    background-color: #FFFFFF;
-    position: relative;
-    width: 840px;
-    height: 300px;
+
+#config, #login {
+  max-width: 80%;
+  margin: 30px auto;
+  padding: 15px 30px;
+  background-color: #fff;
 }
 
-.loginbox .leftpane {
-    border: 2px #A40000 solid;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 47%;
-    height: 90%;
-}
-
-.loginbox .rightpane {
-	border: 2px #A40000 solid;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 47%;
-    height: 90%;
-    overflow: hidden;
-    text-align: center;
-}
-
-.loginbox .content{
-    padding-top: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
-    margin:auto;
-    text-align: left;
-}
-
-.loginbox #splogo{
-}
-
-
-.loginbox #clippedsplogoX {
-    width: 350px;
-}
-
-.loginbox #clippedsplogoY {
-    height: 147px;
-}
-
-.loginbox #spName{
-    padding-top:5px;
-    padding-bottom:5px;
-    font-size:1.2em;
-}
-
-.loginbox #spDescription{
-    padding-top:15px;
-    text-align:left;
+#loginbox, #userinfo, #configcontent {
+  text-align: left;
+  margin:auto;
+  padding: 10px;
 }
 
 h1, h2, h3, h4, h5, h6, a {
     color: #820000;
     text-decoration: none;
 }
+
+h1 {
+  margin: 0px;
+  font-size: 2.1em;
+  line-height: 1.2;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  background-color: #fff;
+
+}
+
+h2 { margin: 26px 0 12px; }
+
+h3 { margin: 26px 0 12px; }
+
+h4 { margin: 22px 0 12px; }
+
+h5 { margin: 22px 0 10px; }
+
+h6 { margin: 20px 0 10px; }
+
 
 a:hover {
     color: #777 !important;
